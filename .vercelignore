@@ -1,0 +1,12 @@
+# Ignore large media directories
+IDTC2nd intro/
+SONY AurionX voice playback/
+SONY trans/
+IDTC2nd Slides/
+SONY Slides/
+# Ignore node_modules
+node_modules/
+# Ignore other large files if needed
+*.mp4
+*.pdf
+*.zip

@@ -1,0 +1,51 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Large media files - excluded from Git
+*.mp4
+*.zip
+*.pdf
+IDTC2nd intro/
+SONY AurionX voice playback/
+SONY trans/
+IDTC2nd Slides/
+SONY Slides/
+IDTC 3rd Slides/
+Slides of Fandao1/
+Slides of Fandao2/
+Slides of Fandao3/
+CNNC Kaili/
+CNNC Kaili2/
+JobBot Pro Wenxiaoyan AI/
+SONY AurionX highlight quick cut/
+SONY AurionX poster/
+
+# Lock files
+pnpm-lock.yaml
+package-lock.json
+yarn.lock

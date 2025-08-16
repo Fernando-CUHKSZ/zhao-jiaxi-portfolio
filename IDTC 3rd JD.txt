@@ -1,0 +1,19 @@
+工业数字孪生大赛（南科大组）— 计算机视觉 / 工业数据科学负责人
+2024 | 深圳
+1.	[多模态数据与异常治理]
+•	设计端到端数据治理流程：KNNImputer 缺失值填补、Standard/RobustScaler 标准化、Z-score/IQR 异常检测；完成 X 光、声发射与工艺参数的时间/像素级“模态对齐”。
+•	构建相关性/偏相关分析与可视化（皮尔逊/斯皮尔曼 + 聚类热力图/网络图），识别强共线与高影响因子，为后续特征筛选与工艺调参提供依据。
+2.	[特征工程与非线性建模]
+•	建立自动化特征工程 Pipeline：二阶多项式与交互项扩展、L1 稀疏正则 SelectFromModel 筛选、PCA 保留 95% 方差；在 Kernel Ridge/GBDT 等非线性模型上做 Grid/Bayesian 调参与交叉验证。
+•	处理类别不平衡（class_weight/采样），将缺陷检出转化为二分类概率与阈值策略，结合 SHAP 输出可解释的特征贡献报告。
+3.	[CastXNet 缺陷检测模型研发]
+•	在 ResNet-50+FPN 基座上引入 Spectral Fusion Block 与注意力（SE/CBAM），优化 RPN 与 RoIAlign；构建“分类+回归+掩膜+感知”复合损失，强化微小孔隙召回。
+•	制定评测协议：COCO 标注（bbox+mask）、0.50:0.95 多阈值 AP、5 折交叉验证与 PR/ROC 曲线；与 YOLOv3/SSD/Faster R-CNN/Mask R-CNN 对比基准。
+4.	[标注与质检工具链]
+•	开发 OpenCV 轮廓定位 + 交互式标注导出组件（JSON/SVG/CSV 批量）；内置坐标/像素对齐与一致性校验、预览与层级过滤，支撑大批量样本快速质检与复核。
+5.	[MLOps 与部署监控]
+•	设计训练/推理流水线与自动回归：mAP/FPS/参数量为主指标，集成 Prometheus+Grafana 进行性能与漂移监控；触发式重训练与版本化管理，保障工业场景稳定上线。
+6.	[工艺优化与数字孪生联动]
+•	将模型输出与工艺参数决策联动，提取“可操作”工艺窗口建议（如行程/压力/冷却速率等的协同区间），用于产线闭环优化与缺陷率预警。
+技术栈（ATS 关键词）
+Python（Pandas/NumPy/Scikit-learn）、PyTorch/MMDetection、OpenCV、Optuna/Ray Tune、SHAP/LIME、PCA/Kernel Ridge/GBDT、COCO 标注、Prometheus/Grafana、JSON/SVG/CSV、数字孪生/多模态融合。

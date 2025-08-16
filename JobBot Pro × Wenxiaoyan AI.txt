@@ -1,0 +1,36 @@
+JobBot Pro × 文小言 — AI Agent 产品负责人
+2024｜百度文小言 AI 创想大赛
+项目概述（Agent 化闭环）
+•	搭建“求职全流程”多智能体体系：职业测评 Agent → 简历生成 Agent → 职位匹配 Agent → 一键投递 Agent → 进度跟踪 Agent → 面试辅导 Agent，以对话为入口实现端到端自动化投递与反馈闭环。
+•	以 Task-Chain/Orchestrator 统一编排多模型（Wenxin LLM、DeepSeek）与工具集（解析、检索、表单填充、验证码、ATS 连接器），形成“内容—能力—行动”的闭环式 Agent 体系。
+核心职责与动作
+1.	Agent 任务编排与工具调用
+•	设计基于任务图/状态机的 Agent 编排：输入解析→子任务拆解→工具路由→结果综合→策略回写；沉淀指令模板与函数调用规范（tool schema）。
+•	集成 简历多模解析引擎（PDF/Word/Image + OCR + 语义分区 + NER），产出结构化实体（教育/经历/技能/项目）供匹配与表单自动填充。
+•	构建 表单自动化投递链路：DOM 结构学习、字段标准化映射（Unified Schema）、跨站点差异适配与半自动兜底机制（预填+人工确认）。
+2.	Agent 工程化落地（平台/生态集成）
+•	前后端与中台架构：React Native（跨端交互）+ FastAPI 微服务 + RabbitMQ；数据层 PostgreSQL/Redis/Elasticsearch/MinIO；统一鉴权与会话保持。
+•	AI 能力层复用：调用文小言已有大模型 API 与对话引擎，叠加简历解析、表单识别等专用工具；在 UI 保持生态一致性并复用 Tab 体系。
+•	ATS 生态打通：设计 ATS 适配层（SAP SuccessFactors、Oracle HCM、北森、Greenhouse、Workday 等），提供 API/CSV/插件三种对接方式与“最小反馈通道”（已读/通过/拒绝），闭合 B 端数据回流。
+3.	反爬&风控合规（Agent 可靠性）
+•	针对主流招聘站点的 CAPTCHA/反自动化：集成高精度识别引擎、分布式代理与类人行为脚本，并以 DOM 变更监测 + 自动回归测试保障迭代稳定性。
+•	隐私与合规：端到端 TLS 1.3 加密、数据脱敏与分域隔离、OAuth2 授权、操作审计与“一键撤销”，遵循 PIPL/GDPR 的最小化与可追溯要求。
+4.	匹配与推荐（Agent 决策能力）
+•	构建职位—简历的多维匹配：规则+表征混合策略，加入“隐藏机会挖掘”“预测匹配度”“投递优先级”；面向应届/初职场/转行者定制路径（JTBD）。
+•	引入对话行为分析/隐性技能标注与能力侧画像，与文小言生态行为数据联动，形成数据飞轮（内容→能力→行动）。
+5.	MVP 验证与交付
+•	明确 3 天内完成首轮申请 的核心路径与成功标准（简历完成率、投递成功率、满意度、节省时间），并拆解阶段目标与监控面板。
+•	规划 三阶段路线图（闭环 MVP → 多平台增强 → B 端双边闭环），以双周 Sprint 推进，设置跨职能团队与 OKR（增长、效率、转化）。
+关键技术与方法（选摘）
+•	工具链：Playwright/Puppeteer（DOM/表单自动化）、自研字段映射算法（Schema Map）、OCR+NER 简历解析、Captcha 引擎、RAG/检索与语义召回。
+•	观测与评估：跨平台适配白名单、自动回归、埋点与看板（投递成功/错误分布/链路耗时）、用户教育与可视化进度降低首体验流失。
+•	安全合规：数据分域、敏感信息掩码、访问分级、日志审计、数据导出/被遗忘权流程。
+面向业务的 Agent 指标框架（设计目标）
+•	效率维度：平均投递时长、端到端完成率、自动化覆盖率、表单字段匹配率；
+•	质量维度：职位匹配度、简历查看率/面试约见率（视 ATS 回流）；
+•	稳定维度：反爬触发率/封禁率、DOM 变更下的稳健性回归；
+•	合规维度：授权闭环完成率、数据留痕完备率、审计通过率。
+技术栈（ATS 关键词）
+•	LLM & Orchestration：Wenxin LLM、DeepSeek、多 Agent 编排、Tool/Function Calling、Task-Chain
+•	Backend/Infra：FastAPI、RabbitMQ、PostgreSQL、Redis、Elasticsearch、MinIO、React Native
+•	Automation/Security：Playwright/Puppeteer、OAuth2、TLS1.3、Data Masking、Audit Logs、GDPR/PIPL 

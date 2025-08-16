@@ -1,0 +1,23 @@
+FROM node:18-alpine
+
+# 安装依赖
+RUN apk add --no-cache libc6-compat
+
+WORKDIR /app
+
+# 复制package文件
+COPY package.json pnpm-lock.yaml* ./
+
+# 安装依赖
+RUN corepack enable pnpm && pnpm install
+
+# 复制源代码
+COPY . .
+
+EXPOSE 3000
+
+ENV PORT 3000
+ENV HOSTNAME "0.0.0.0"
+
+# 开发模式启动
+CMD ["pnpm", "dev"]
