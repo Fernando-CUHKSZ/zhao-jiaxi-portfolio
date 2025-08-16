@@ -11,7 +11,6 @@ const nextConfig = {
   },
   // Removed 'output: standalone' for Vercel deployment compatibility
   trailingSlash: false,
-  assetPrefix: '',
 }
 
 export default nextConfig
